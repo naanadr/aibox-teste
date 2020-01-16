@@ -1,5 +1,4 @@
 # aibox-teste
-# correct_orientation
 [![Python Version](https://img.shields.io/badge/python-3.8.1-blue.svg)](https://img.shields.io/badge/python-3.7.3-blue.svg)
 [![Django Version](https://img.shields.io/badge/django-3.0.2-green.svg)](https://img.shields.io/badge/django-3.0.2-green.svg)
 

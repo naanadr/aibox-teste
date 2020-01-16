@@ -1,14 +1,13 @@
 from django.shortcuts import render
 from django.contrib import messages
-from django.template import loader
-from django.http import HttpResponse
 import logging
+import os
 
 from io import StringIO
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.io import arff
-from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import learning_curve
 from sklearn.model_selection import ShuffleSplit
 from sklearn.neighbors import KNeighborsClassifier
@@ -93,7 +92,7 @@ def train_model(classif, X, y, name, classif_name):
     models = {
         '1': SVC(gamma=0.001),
         '2': KNeighborsClassifier(n_neighbors=3),
-        '3': LinearRegression()
+        '3': RandomForestClassifier(max_depth=2, random_state=0)
     }
 
     fig, axes = plt.subplots(3, 1, figsize=(10, 15))
@@ -120,7 +119,7 @@ def main_page(request):
             models = {
                 '1': 'svc',
                 '2': 'knn',
-                '3': 'linear'
+                '3': 'randomflorest'
             }
 
             arquivo = request.FILES['arquivo']
@@ -142,6 +141,9 @@ def main_page(request):
 
             messages.success(request, 'Modelo treinado com sucesso, '
                              'obrigado por aguardar!')
+            messages.success(request, 'Imagem salva em {}!'.format(
+                             os.getcwd() + '/static/' + context['plot']))
+
         except Exception as e:
             messages.warning(request, 'Não foi possível fazer upload!')
             logging.getLogger('error_logger').error('Nao foi possivel fazer '

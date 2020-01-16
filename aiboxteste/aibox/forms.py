@@ -7,7 +7,7 @@ class FileUploadForm(forms.ModelForm):
     CHOICES = (
         (1, 'SVM'),
         (2, 'KNN'),
-        (3, 'Linear Regression'),
+        (3, 'Random Florest'),
     )
 
     classificador = forms.ChoiceField(choices=CHOICES)

@@ -2,12 +2,11 @@
 [![Python Version](https://img.shields.io/badge/python-3.8.1-blue.svg)](https://img.shields.io/badge/python-3.7.3-blue.svg)
 [![Django Version](https://img.shields.io/badge/django-3.0.2-green.svg)](https://img.shields.io/badge/django-3.0.2-green.svg)
 
+Esse projeto consiste de uma página web que tem a finalidade de a partir de um dataset e de um classificador, fornecer ao usuário as seguintes informações: curva de aprendizado, escalabilidade e performance.
 
 ![Screenshot](screenshot.png)
 
-Esse projeto consiste de uma página web que tem a finalidade de a partir de um dataset e de um classificador, fornecer ao usuário as seguintes informações: curva de aprendizado, escalabilidade e performance.
-
-Como pode ser observado na figura a baixo.
+Exemplo de output, após execução de um classificador:
 ![plot](aiboxteste/aibox/static/plots/PhishingData_knn.png)
 
 
